@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "",
+    "next": "",
+    "react": "",
+    "react-dom": "",
+    "axios": "",
+    "mysql": "",
+    "mysql2": ""
+  },
+  "scripts": {
+    "dev": "node ./website/server.js",
+    "build": "next build ./website",
+    "start": "node ./website/server.js"
+  }
+}
