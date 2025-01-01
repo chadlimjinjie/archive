@@ -1,0 +1,42 @@
+<div class="overflow-x-auto">
+    <table class="table-auto w-full">
+        <thead>
+            <tr class="text-left">
+                <th class="p-4">No.</th>
+                <!-- <th class="p-4">ID</th> -->
+                <th class="p-4">Username</th>
+                <th class="p-4">Discriminator</th>
+                <th class="p-4">Tag</th>
+                <th class="p-4"></th>
+                <!-- <th class="p-4"></th> -->
+                <!-- <th class="p-4"></th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; let i=index;">
+                <td class="p-4">{{i + 1}}</td>
+                <!-- <td class="p-4">{{user.id}}</td> -->
+                <td class="p-4">
+                    <span [matTooltip]="user.id" matTooltipPosition="after">{{user.username}}</span>
+                </td>
+                <td class="p-4">{{user.discriminator}}</td>
+                <td class="p-4">{{user.tag}}</td>
+                <td class="p-4">
+                    <button mat-flat-button color="primary" (click)="sendDM(user.id)">
+                        <span>Send DM</span>
+                    </button>
+                </td>
+                <!-- <td class="p-4">
+                    <button mat-flat-button color="">
+                        <span>Kick</span>
+                    </button>
+                </td> -->
+                <!-- <td class="p-4">
+                    <button mat-flat-button color="warn">
+                        <span>Ban</span>
+                    </button>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>

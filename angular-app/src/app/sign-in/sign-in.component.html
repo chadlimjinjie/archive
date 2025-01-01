@@ -1,0 +1,18 @@
+<div class="flex justify-center items-center h-screen p-4">
+    <form [formGroup]="signInForm" (ngSubmit)="handleSignIn()">
+        <mat-form-field class="w-full" appearance="fill">
+            <mat-label class="text-slate-50" for="email">Email</mat-label>
+            <input id="email" matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="w-full" appearance="fill">
+            <mat-label class="text-slate-50" for="password">Password</mat-label>
+            <input id="password" type="password" matInput formControlName="password">
+        </mat-form-field>
+        <div class="flex justify-between">
+            <button class="bg-slate-50" mat-flat-button>Login</button>
+            <div class="flex items-center">
+                <a class="text-sky-400" routerLink="/register">Create an account</a>
+            </div>
+        </div>
+    </form>
+</div>

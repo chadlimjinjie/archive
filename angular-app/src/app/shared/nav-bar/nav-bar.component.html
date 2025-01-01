@@ -1,0 +1,11 @@
+<div class="flex flex-row p-2 mb-2 bg-slate-800 text-slate-50">
+    <div class="w-full"></div>
+    <div class="m-auto mr-4 w-28 sm:w-fit">
+        <p class="truncate">{{address}}</p>
+    </div>
+
+    <div class="">
+        <button *ngIf="!address" class="text-green-50 bg-green-500" (click)="doConnect()" mat-flat-button>Connect</button>
+        <button *ngIf="address" class="text-rose-50 bg-rose-500" (click)="doDisconnect()" mat-flat-button>Disconnect</button>
+    </div>
+</div>

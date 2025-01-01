@@ -1,0 +1,3 @@
+<mat-slide-toggle [checked]="switchState.checked" (change)="changes($event)" (toggleChange)="toggleChanges($event)">
+    <span *ngIf="text && !hideText">{{ text }}</span>
+</mat-slide-toggle>

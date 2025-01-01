@@ -1,0 +1,58 @@
+<!-- <div class="pt-4"></div> -->
+<div class="md:container md:mx-auto px-4">
+    <div class="flex justify-end">
+        <button class="text-rose-50 bg-rose-600" mat-flat-button (click)="handleLogout()">Logout</button>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+        <div class="col-span-2">
+            <table class="table-auto w-full">
+                <thead>
+                    <tr class="text-left">
+                        <!-- <th class="p-4">No.</th> -->
+                        <th class="p-4">Switch Name</th>
+                        <th class="p-4">Switch State</th>
+                        <!-- <th class="p-4"></th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let switch of switchArray; let i=index;">
+                        <!-- <td class="p-4">{{i + 1}}</td> -->
+                        <td class="p-4">{{switch.name}}</td>
+                        <td class="p-4">
+                            <switch [text]="switch.name" [switchState]="switch" [hideText]="true"
+                                (change)="handleSwitchChange(switch, $event)"></switch>
+                        </td>
+                        <!-- <td class="p-4">
+                            <button mat-flat-button color="warn">Delete</button>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <form [formGroup]="addSwitchForm" (ngSubmit)="handleAddSwitch($event)">
+                <mat-form-field class="w-full" appearance="outline">
+                    <mat-label for="name">Switch name</mat-label>
+                    <input id="name" matInput placeholder="Ex. Ceiling Light" formControlName="name">
+                </mat-form-field>
+                <mat-form-field class="w-full" appearance="outline">
+                    <mat-label for="device_id">Device ID</mat-label>
+                    <input id="device_id" matInput placeholder="Ex. 702800237c87ce921162" formControlName="device_id">
+                </mat-form-field>
+                <mat-form-field class="w-full" appearance="outline">
+                    <mat-label for="device_key">Device key</mat-label>
+                    <input id="device_key" matInput placeholder="Ex. 260b030f3036fcef" formControlName="device_key">
+                </mat-form-field>
+                <mat-form-field class="w-full" appearance="outline">
+                    <mat-label for="dp_id">Device property ID</mat-label>
+                    <input id="dp_id" matInput placeholder="Ex. 1, 2, 9, 10" formControlName="dp_id">
+                </mat-form-field>
+                <div class="flex flex-row-reverse">
+                    <button mat-flat-button type="submit">Add Switch</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>

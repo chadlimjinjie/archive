@@ -1,0 +1,20 @@
+<div class="overflow-x-auto">
+    <table class="table-auto w-full">
+        <thead>
+            <tr class="text-left">
+                <th class="p-4">No.</th>
+                <!-- <th class="p-4">ID</th> -->
+                <th class="p-4">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let guild of guilds; let i=index;">
+                <td class="p-4">{{i + 1}}</td>
+                <!-- <td class="p-4">{{guild.id}}</td> -->
+                <td class="p-4">
+                    <a [matTooltip]="guild.id" matTooltipPosition="right" routerLink="/discord/guild/{{guild.id}}">{{guild.name}}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
